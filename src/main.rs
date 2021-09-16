@@ -49,7 +49,9 @@ fn animation(rx: mpsc::Receiver<Result>) -> Result {
     loop {
         match rx.try_recv() {
             Ok(result) => {
-                println!();
+                if skip_first.elapsed() >= Duration::from_millis(200) {
+                    println!();
+                }
                 return result;
             }
             Err(_) => {
