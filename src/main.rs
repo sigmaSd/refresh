@@ -57,7 +57,7 @@ fn animation(rx: mpsc::Receiver<Result>) -> Result {
                     continue;
                 }
 
-                print!("\r[{}] Remaining: {}Mb", bar(), swap_remaining());
+                print!("\r[{}] Remaining: {}Mb    ", bar(), swap_remaining());
                 stdout().flush().unwrap();
                 sleep(Duration::from_millis(100));
             }
